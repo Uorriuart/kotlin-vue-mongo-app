@@ -1,4 +1,5 @@
 # frontend
+UI for sample Blog app with VueJS 3
 
 ## Project setup
 ```
