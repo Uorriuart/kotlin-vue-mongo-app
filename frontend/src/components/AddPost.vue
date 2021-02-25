@@ -1,8 +1,6 @@
 <template>
-
   <div class="submit-form">
     <div v-if="!submitted">
-
       <div class="form-group">
         <label for="title">Title</label>
         <input
@@ -27,17 +25,14 @@
         />
       </div>
 
-      <button @click="savePost()" class="btn btn-success">Submit</button>
-
+      <button @click="savePost()" class="btn btn-outline-success">Submit</button>
     </div>
 
     <div v-else>
       <h4>You submitted successfully!</h4>
-      <button class="btn btn-success" @click="newPost()">Add</button>
+      <button class="btn btn-outline-success" @click="newPost()">Add</button>
     </div>
-
   </div>
-
 </template>
 
 <script>
