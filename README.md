@@ -3,7 +3,7 @@ This is an example of web application comprising of several components communica
 
 ## Components
 
-1. [Frontend](/frontend) provides UI. Created with [VueJS 3](http://vuejs.org)
+1. [Frontend](/frontend) provides UI. Created with [VueJS 3](http://vuejs.org).
 2. [Blog API](/blog-api) is a Spring Boot project written in Kotlin. Provides full CRUD a Post entity that has title and description fields.
 3. [MongoDB](https://www.mongodb.com/) used for volume post data storage.
 
