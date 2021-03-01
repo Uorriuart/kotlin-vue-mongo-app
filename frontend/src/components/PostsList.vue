@@ -1,49 +1,51 @@
 <template>
-  <div class="row">
-    <div class="col-md-4">
-      <h4>Use search</h4>
-      <div>
-        <form>
-          <input class="form-control mr-sm-2" type="search" placeholder="Search by title" aria-label="Search"
-                 v-model="title">
-          <button class="btn btn-outline-success my-2 my-sm-3" type="button"
-                  @click="searchTitle()">Search
-          </button>
-        </form>
-      </div>
-    </div>
+  <div class="jumbotron">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div>
+            <form>
+              <input class="form-control mr-sm-2" type="search" placeholder="Search by title" aria-label="Search"
+                     v-model="title">
+              <button class="btn btn-outline-success my-sm-3 custom" type="button"
+                      @click="searchTitle()">Search
+              </button>
+            </form>
+          </div>
 
-    <div class="col-md-4">
-      <h4>Posts List</h4>
-      <ul class="list-group">
-        <li class="list-group-item"
-            :class="{ active: index === currentIndex }"
-            v-for="(post, index) in posts"
-            :key="index"
-            @click="setActivePost(post, index)"
-        >
-          {{ post.title }}
-        </li>
-      </ul>
-
-      <button class="btn btn-outline-danger my-2 my-sm-3" @click="removeAllPosts()">
-        Remove All
-      </button>
-    </div>
-
-    <div class="col-md-4">
-      <div v-if="currentPost">
-        <h4>Post</h4>
-        <div>
-          <label><strong>Title:</strong></label> {{ currentPost.title }}
+          <div>
+            <h4>Posts list</h4>
+            <ul class="list-group">
+              <li class="list-group-item"
+                  :class="{ active: index === currentIndex }"
+                  v-for="(post, index) in posts"
+                  :key="index"
+                  @click="setActivePost(post, index)"
+              >
+                {{ post.title }}
+              </li>
+            </ul>
+            <button class="btn btn-outline-danger my-sm-3 custom" @click="removeAllPosts()">
+              Remove All
+            </button>
+          </div>
         </div>
-        <div>
-          <label><strong>Description:</strong></label> {{ currentPost.description }}
+
+        <div class="col-md-6">
+          <div v-if="currentPost">
+            <h4>Post</h4>
+            <div>
+              <label><strong>Title:</strong></label> {{ currentPost.title }}
+            </div>
+            <div>
+              <label><strong>Description:</strong></label> {{ currentPost.description }}
+            </div>
+            <a class="btn btn-outline-primary my-sm-0 custom" :href="`/posts/` + currentPost.id">Edit</a>
+          </div>
+          <div v-else>
+            <p>Please click on a Post...</p>
+          </div>
         </div>
-        <a class="btn btn-outline-primary my-2 my-sm-0" :href="`/posts/` + currentPost.id">Edit</a>
-      </div>
-      <div v-else>
-        <p>Please click on a Post...</p>
       </div>
     </div>
   </div>
@@ -112,3 +114,9 @@ export default {
   }
 };
 </script>
+
+<style>
+.custom {
+  width: 110px !important;
+}
+</style>

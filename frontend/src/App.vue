@@ -4,7 +4,7 @@
       <div class="navbar-header">
         <router-link to="/" class="navbar-brand">Blog</router-link>
       </div>
-      <div>
+      <div class="nav ml-auto">
         <ul class="nav navbar-nav">
           <li>
             <router-link to="/posts" class="nav-link">Posts</router-link>
