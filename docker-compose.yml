@@ -1,0 +1,26 @@
+version: "3"
+services:
+
+  mongodb:
+    image: mongo:latest
+    container_name: "mongodb"
+    ports:
+      - 27017:27017
+
+  blog-api:
+    build: ./blog-api
+    image: blog-api
+    container_name: "blog-api"
+    ports:
+      - 8080:8080
+    links:
+      - mongodb
+
+  front:
+    build: ./frontend
+    image: front
+    container_name: front
+    ports:
+      - 8081:8081
+    links:
+      - blog-api
