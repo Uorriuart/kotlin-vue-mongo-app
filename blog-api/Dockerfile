@@ -1,4 +1,3 @@
-# temp container to build using gradle
 FROM gradle:6.8.2 AS TEMP_BUILD_IMAGE
 ENV APP_HOME=/usr/app/
 WORKDIR $APP_HOME
@@ -13,7 +12,6 @@ RUN gradle build || return 0
 COPY . .
 RUN gradle clean build
     
-# actual container
 FROM openjdk:8-jdk-alpine
 ENV ARTIFACT_NAME=blog-api-0.0.1-SNAPSHOT.jar
 ENV APP_HOME=/usr/app/
