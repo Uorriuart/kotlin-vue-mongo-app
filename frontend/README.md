@@ -2,23 +2,17 @@
 UI for sample Blog app with VueJS 3
 
 ## Project setup
-```
+
+``` bash
+# install dependencies
 yarn install
-```
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+# serve with hot reload at localhost:8081
+yarn run serve
 
-### Compiles and minifies for production
-```
-yarn build
-```
+# compiles and minifies for production
+yarn run build
 
-### Lints and fixes files
-```
-yarn lint
 ```
 
 ### Customize configuration
